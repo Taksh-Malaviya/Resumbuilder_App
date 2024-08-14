@@ -23,11 +23,13 @@ List<Map<String, dynamic>> Resume = [
   },
   {
     'image': "",
-    'text': "Project",
+    'text': "Skill's",
+    'routes': Routes.Skill,
   },
   {
     'image': "",
-    'text': "Project",
+    'text': "Declaration",
+    'routes': Routes.Declarati,
   },
   {
     'image': "",

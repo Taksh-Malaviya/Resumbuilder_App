@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+String cname = "";
+String Status = "";
+String roal = "";
+int? expyear;
+
 class Experiance extends StatefulWidget {
   const Experiance({super.key});
 
@@ -9,11 +14,6 @@ class Experiance extends StatefulWidget {
 }
 
 class _ExperianceState extends State<Experiance> {
-  String cname = "";
-  String Status = "";
-  String roal = "";
-  int? expyear;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

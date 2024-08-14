@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:resumbuilder/Resumbuilderapp/routes/routes.dart';
+import 'package:resumbuilder/splash/scrren/personal/personal.dart';
 
 import '../../../../lists/homepage.dart';
 
@@ -39,7 +41,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, e['routes']);
+                    Navigator.pushNamed(context, e['routes']).then(
+                      (value) => setState(() {}),
+                    );
                   },
                   child: Container(
                     height: 150.h,
@@ -69,6 +73,27 @@ class _HomePageState extends State<HomePage> {
             ),
           );
         },
+      ),
+      floatingActionButton: Visibility(
+        visible: image != null,
+        child: FloatingActionButton.extended(
+          backgroundColor: Colors.green,
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.PDF);
+          },
+          label: Row(
+            children: [
+              Text(
+                "PDF      ",
+                style: TextStyle(color: Colors.white),
+              ),
+              Icon(
+                Icons.picture_as_pdf,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

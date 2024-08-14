@@ -5,6 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
+File? image;
+int index = 0;
+String email = "";
+String add = "";
+String num = "";
+String Pass = "";
+bool visible = true;
+
+String name = "";
+
 class Personal extends StatefulWidget {
   const Personal({super.key});
 
@@ -13,16 +23,6 @@ class Personal extends StatefulWidget {
 }
 
 class _PersonalState extends State<Personal> {
-  int index = 0;
-  String name = "";
-  String email = "";
-  String add = "";
-  String num = "";
-  String Pass = "";
-  bool visible = true;
-
-  File? image;
-
   ImagePicker picker = ImagePicker();
 
   Future<void> pickImage({required ImageSource source}) async {
@@ -284,9 +284,9 @@ class _PersonalState extends State<Personal> {
                                   borderRadius: BorderRadius.circular(18),
                                 ),
                               ),
-                              // onChanged: (val) {
-                              //   num = val;
-                              // },
+                              onChanged: (val) {
+                                num = val;
+                              },
                             ),
                             SizedBox(
                               height: 10.h,
@@ -339,6 +339,51 @@ class _PersonalState extends State<Personal> {
                             SizedBox(
                               height: 30.h,
                             ),
+                            Divider(),
+                            SizedBox(
+                              height: 20.h,
+                            ),
+                            TextFormField(
+                              cursorColor: Colors.green,
+                              cursorWidth: 2,
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w400),
+                              textInputAction: TextInputAction.next,
+                              decoration: InputDecoration(
+                                fillColor: Colors.green,
+                                focusColor: Colors.green,
+                                hintText: "Hindi",
+                                hintStyle: TextStyle(color: Colors.grey),
+                                labelText: "Language",
+                                labelStyle:
+                                    TextStyle(color: Colors.grey, fontSize: 20),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.green),
+                                  borderRadius: BorderRadius.circular(18),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.green,
+                                    width: 2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(18),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Colors.green,
+                                    width: 2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(18),
+                                ),
+                              ),
+                              // onChanged: (val) {
+                              //   val = decplace;
+                              //   setState(() {});
+                              // },
+                            ),
+                            SizedBox(
+                              height: 25.h,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -375,11 +420,6 @@ class _PersonalState extends State<Personal> {
                                 ),
                               ],
                             ),
-                            Text("Name : ${name}"),
-                            Text("E-mail : ${email}"),
-                            Text("Address : ${add}"),
-                            Text("Number : ${num}"),
-                            Text("password : ${Pass}"),
                           ],
                         ),
                       ),
@@ -422,6 +462,7 @@ class _PersonalState extends State<Personal> {
                                       ElevatedButton.icon(
                                         onPressed: () {
                                           pickImage(source: ImageSource.camera);
+                                          setState(() {});
                                         },
                                         label: Text("Camera"),
                                       ),
@@ -429,6 +470,7 @@ class _PersonalState extends State<Personal> {
                                         onPressed: () {
                                           pickImage(
                                               source: ImageSource.gallery);
+                                          setState(() {});
                                         },
                                         label: Text("Gallary"),
                                       ),
