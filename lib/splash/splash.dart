@@ -13,13 +13,16 @@ class Splash extends StatelessWidget {
       // Navigator.pushNamed(context, Routes.home);
     });
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Splash"),
+        backgroundColor: Colors.white,
+        //title: Text("Splash"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Image.network("https://www.realtimecv.com/images/scanner.gif"),
+          Image.network(
+              "https://cdn.dribbble.com/users/650464/screenshots/5932778/apply-for-job-icon-motion-graphic_v1.gif"),
           Spacer(),
           LinearProgressIndicator(
             color: Colors.green,

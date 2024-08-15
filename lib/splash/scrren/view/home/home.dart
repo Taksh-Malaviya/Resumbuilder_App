@@ -54,9 +54,13 @@ class _HomePageState extends State<HomePage> {
                         Radius.circular(20),
                       ),
                     ),
-                    // child: Image.asset(
-                    //   e["image"],
-                    // ),
+                    child: Transform.scale(
+                      scale: 0.5,
+                      child: Image.network(
+                        e["image"],
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
